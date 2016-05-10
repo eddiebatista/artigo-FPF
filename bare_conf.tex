@@ -412,7 +412,7 @@ Production lines normally present a verification step, which is responsible for 
 \label{intro}
 % no \IEEEPARstart
 
-Production lines are commonly responsible for assembling commercial products, according to a predefined execution flow. In summary, components are added while a partially complete product moves through workstations, until a final assembly is obtained. Nonetheless, as the instantiations of a product manufacturing process, they normally provide some verification/testing step, which is in charge of warning about defective or nonconforming devices.
+Production lines are commonly responsible for assembling commercial products, according to a predefined execution flow. In summary, components are added while a partially complete product moves through workstations (WSs), until a final assembly is obtained. Nonetheless, as the instantiations of a product manufacturing process, they normally provide some verification/testing step, which is in charge of warning about defective or nonconforming devices.
 
 As widely known, production processes must be as accurate as possible, in order to provide a small rejection rate, which then reduces resources spent in problem correction or even financial losses, due to product return. In addition, a correct analysis depends on correct parameters and measures; otherwise, conforming products may be rejected (false positive) and also defective devices may be approved (false negative).
 
@@ -472,12 +472,12 @@ Product C & $893984$	& $1.51$\\
 The chosen production line was used for assembling set-top boxes, according to BDTS \cite{sbtvd}. The problem mentioned in section \ref{intro}, regarding verification failure due to signal conditions, was identified and handled, as described in section \ref{metho}. Figure \ref{figure:fig1} shows the employed system setup.
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=3.4in]{Fig1.eps}}
+\centerline{\includegraphics[width=3.5in]{Fig1.eps}}
 \caption{System setup for real tests.}
 \label{figure:fig1}
 \end{figure}
 
-As one may notice, the tuning verification has an integrated signal condition evaluation  (the proposed approach) and, if poor condition is detected, the proposed methodology indicates that another test must be performed. 
+When devices in production arrive at the verification workstation, the mentioned tuning test is performed and, at the same time, the monitoring module decides if the signal is in condition to be decoded. Based on the responses from the product line's verification procedure and the monitoring module, the classifier will finally judge if the tuning verification must be repeated or not. Of course, if the signal quality considered unsuitable for a long time, a warn signal is issued, which will advise the operator to check the external test signal. As one may notice, the tuning verification has an integrated signal condition evaluation  (the proposed approach) and, if poor condition is detected, the proposed methodology indicates that another test must be performed. 
 
 It is worth noticing that the proposed methodology was implemented through the spectrum analyzer PXIe-1073, produced by National Instruments, which was used as acquisition front-end. The acquired RF parameters were then read with a monitoring system developed in Labview, which also includes the classification algorithm.
 
