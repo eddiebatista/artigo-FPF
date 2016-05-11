@@ -344,11 +344,11 @@
 %Fax: (888) 555--1212}}
 
 \author{
-\IEEEauthorblockN{Paulo Seixas, Pamela Levy, Thales Souza, and Eddie B. de Lima Filho\\}
+\IEEEauthorblockN{Paulo Seixas, Pamela Levy, Eddie B. de Lima Filho, and Thales Souza\\}
 \IEEEauthorblockA{FPF Tech \\
 									Av. Governador Danilo de Matos Areosa, 1170, Dist. Industrial\\
 									Manaus-AM, Brazil 69075-351\\
-                  Email: \{paulo.seixas,pamela.levy,thales.souza,eddie.filho\}@fpf.br}
+                  Email: \{paulo.seixas,pamela.levy,eddie.filho,thales.souza\}@fpf.br}
 }
 
 % conference papers do not typically use \thanks and this command
@@ -388,7 +388,7 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-Production lines normally present a verification step, which is responsible for warning about defective devices, which should not be released for commercial use. That step, in digital television (DTV) production lines, often includes a tuning and decoding check, which basically verifies if DTV devices are capable of presenting audio and video. However, poor signal conditions may cause unnecessary rejections, which happen due to very hostile environments. Because of that, the present paper proposes a verification methodology that reports poor signal conditions during tuning tests, with the goal of reporting that the associated check must be executed again. Tests in a real environment showed that the proposed approach is effective and efficient, while revealed that less than $40\%$ of the obtained rejections were indeed caused by hardware problems.
+Production lines normally present a verification step, which is responsible for warning about defective devices that should not be released for commercial use. That step, in digital television (DTV) production lines, often includes a tuning and decoding check, which basically verifies if DTV devices are capable of presenting audio and video. However, poor signal conditions may cause unnecessary rejections, which happen due to very hostile environments. Because of that, the present paper proposes a verification methodology that reports poor signal conditions during tuning tests, with the goal of indicating that the associated check must be executed again. Tests in a real environment showed that the proposed approach is effective and efficient, while revealed that less than $40\%$ of the obtained rejections were indeed caused by hardware problems.
 \end{abstract}
 
 % no keywords
@@ -423,7 +423,7 @@ A common problem faced in DTV production lines is the device rejection caused by
 The problems discussed in the last paragraphs are the inspiration for the present work, which proposes a simple verification methodology regarding product rejection, during tuning tests. In summary, the transmitted DTV signal is monitored, analyzed, according to standardized parameters and previously collected data, and, as a result, an automatic evaluation system warns when a product is rejected during poor signal conditions. As a consequence, the most obvious approach is to retest the related device, in order to confirm the obtained result or at least provide stable signal conditions. %Execution results, in real environments, show that the proposed methodology is effective in providing a simple warning for a rejected product, during tuning tests, which is then confirmed under suitable signal conditions.
 
 \section{Digital TV Signal Quality Parameters}\label{measure}
-When a DTV signal is received and decoded, the most direct indication of reception problems is the presence of artifacts in the decoded video \cite{keith}. Those artifacts, in turn, are linked to the impossibility of acquisition of transport stream packets \cite{reimers,iso13818_1} without errors, due to the performance of error-correcting codes \cite{keith,reimers}. Traditional DTV standards, such as Digital Video Broadcasting \cite{dvb}, Integrated Services Digital Broadcasting (ISDB) \cite{isdb}, and Advanced Television Systems Committee \cite{atsc} normally employ a concatenated strategy, based on two encoders: an inner encoder, which is often based on convolutional codes, and an outer encoder, which normally relies on BCH codes, such as Reed-Solomon.
+When a DTV signal is received and decoded, the most direct indication of reception problems is the presence of artifacts, in the decoded video \cite{keith}. Those artifacts, in turn, are linked to the impossibility of acquisition, without errors, of transport stream packets \cite{reimers,iso13818_1}, due to the performance of error-correcting codes \cite{keith,reimers}. Traditional DTV standards, such as Digital Video Broadcasting \cite{dvb}, Integrated Services Digital Broadcasting (ISDB) \cite{isdb}, and Advanced Television Systems Committee \cite{atsc} normally employ a concatenated strategy, based on two encoders: an inner encoder, which is often based on convolutional codes, and an outer encoder, which normally relies on BCH codes, such as Reed-Solomon.
 
 The mentioned strategy is able to provide quasi-error-free (QEF) reception after the Reed-Solomon decoder, when the bit error ratio (BER) after the convolutional decoder (viterbi algorithm) is below $2\times 10^{-4}$ \cite{dvb}. In addition, error visibility is considered to happen for BER values above $3\times 10^{-6}$ \cite{fcc}, after the Reed-Solomon decoder. It is worth noticing that such a performance is directly related to the signal input level (sensitivity) and carrier-to-noise ratio (C/N).
 
@@ -441,11 +441,11 @@ The proposed methodology is based on the measurement of two RF parameters, compu
 	\item Indication of signal conditions.
 \end{itemize}
 
-It is worth noticing that such a classification must be done according to standardized figures and previously measured data. Regarding that matter, one may notice that the standards themselves already suggest such values, according to the chosen configuration parameters. For instance, it is often assumed that when measuring the sensitivity of a receiver compliant with the Brazilian Digital Television System (BDTS), which uses the terrestrial ISDB as air interface, for a $64$-QAM modulation and $3/4$ code rate, QEF reception can be obtained if a minimum C/N of $19$ dB is provided at system input \cite{sbtvd}. 
+It is worth noticing that such a classification must be done according to standardized figures and previously measured data. Regarding that matter, one may notice that some standards already suggest such values, according to the chosen configuration parameters. For instance, it is often assumed that when measuring the sensitivity of a receiver compliant with the Brazilian Digital Television System (SBTVD), which uses the terrestrial ISDB as air interface, for a $64$-QAM modulation and $3/4$ code rate, QEF reception can be obtained if a minimum C/N of $19$ dB is provided at system input \cite{sbtvd}. 
 
-As a consequence, during the development of the present work, a great amount of tests was performed, in order to raise curves regarding signal level and C/N. The latter, along with standardized values, for all handled transmission standards and configuration parameters, were then used for signal quality classification. Before performing analysis, it is only necessary do indicate the current setup, {\it i.e.}, which standard and configuration is being used.
+As a consequence, during the development of the present work, a great amount of tests was performed, in order to raise curves regarding signal level and C/N. The latter, along with standardized values, for all handled transmission standards and configuration parameters, were then used for signal quality classification. Before performing an analysis, it is only necessary do indicate the current setup, {\it i.e.}, which standard and configuration is being used.
 
-The proposed methodology can be easily integrated into any tuning verification procedure, in order to provide signal quality indications, as long as suitable equipment is employed. Besides, given that all steps can be performed automatically, there is no need for additional human interaction, which may result in financial savings.
+The proposed methodology can be easily integrated into any tuning verification procedure, in order to provide signal quality indications, as long as suitable equipment is employed. Besides, given that all steps can be performed automatically, there is no need for additional human interaction, which may result in budget saving.
 
 \section{Tests in a Real Environment}
 
@@ -469,7 +469,7 @@ Product C & $893984$	& $1.51$\\
 \end{tabular}
 \end{table}
 
-The chosen production line was used for assembling set-top boxes, according to BDTS \cite{sbtvd}. The problem mentioned in section \ref{intro}, regarding verification failure due to signal conditions, was identified and handled, as described in section \ref{metho}. Figure \ref{figure:fig1} shows the employed system setup.
+The chosen production line was used for assembling set-top boxes, according to SBTVD \cite{sbtvd}. The problem mentioned in section \ref{intro}, regarding verification failure due to signal conditions, was identified and handled, as described in section \ref{metho}. Figure \ref{figure:fig1} shows the employed system setup.
 
 \begin{figure}[ht]
 \centerline{\includegraphics[width=3.5in]{Fig1.eps}}
@@ -477,7 +477,7 @@ The chosen production line was used for assembling set-top boxes, according to B
 \label{figure:fig1}
 \end{figure}
 
-When devices in production arrive at the verification workstation, the mentioned tuning test is performed and, at the same time, the monitoring module decides if the signal is in condition to be decoded. Based on the responses from the product line's verification procedure and the monitoring module, the classifier then judges if the tuning verification must be repeated or was correctly performed. If the signal quality remains unsuitable for a long time, a warning signal is issued, which indicates that the external test signal must be checked. In summary, the tuning verification has an integrated signal condition evaluation  (the proposed approach), which indicates that another test must be performed, if poor signal condition is detected. 
+When devices in production arrive at the verification workstation, the mentioned tuning test is performed and, at the same time, the monitoring module decides if the signal is in condition to be decoded. Based on the responses from the production line's verification procedure and the monitoring module, the classifier then judges if the tuning verification must be repeated or was correctly performed. If the signal quality remains unsuitable for a long time, a warning signal is issued, which indicates that the external test signal must be checked. In summary, the tuning verification has an integrated signal condition evaluation  (the proposed approach), which indicates that another test must be performed, if poor signal condition is detected. 
 
 It is worth noticing that the proposed methodology was implemented through the spectrum analyzer PXIe-1073, produced by National Instruments, which was used as acquisition front-end. The acquired RF parameters were then read with a monitoring system developed in Labview, which also includes the classification algorithm.
 
